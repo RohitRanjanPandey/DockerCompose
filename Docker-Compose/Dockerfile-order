@@ -1,0 +1,5 @@
+#Enter all the required tools like java, mysql, redis etc inside Dockerfile
+FROM openjdk:8
+ADD target/order-docker.jar order-docker.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "order-docker.jar"]

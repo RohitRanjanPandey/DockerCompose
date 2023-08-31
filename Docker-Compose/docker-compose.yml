@@ -1,0 +1,19 @@
+version: '2'
+services:
+  productservice:
+    image: productservice:latest
+    ports:
+      - 9090:7003
+    networks:
+      - feign-network
+
+  orderservice:
+    image: orderservice:latest
+    ports:
+        - 8080:7002
+    networks:
+        - feign-network
+
+networks:
+    feign-network:
+        driver: bridge
